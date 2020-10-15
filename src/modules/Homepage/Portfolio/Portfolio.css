@@ -1,0 +1,34 @@
+.portfolio-wrapper {
+    height: 100vh;
+    background-color: #111430;
+}
+
+.slick-dots li button:before {
+    color: #FBD062;
+    font-size: 20px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #FBD062;
+    font-size: 25px;
+}
+.portfolio-wrapper figure {
+    margin: 0 15px;
+}
+
+.slider-img {
+    display: block;
+    margin: auto;
+    height: 330px;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 991px){
+    .portfolio-wrapper {
+        height: auto;
+    }
+    .slick-dots{
+        bottom: 0;
+    }
+}

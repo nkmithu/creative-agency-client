@@ -1,0 +1,15 @@
+
+.sidebar-wrapper{
+    width: 250px;
+}
+.dashboard-menu-items li {
+    list-style: none;
+    margin: 15px 0;
+}
+.dashboard-menu-items a {
+    text-decoration: none;
+    color: #000;
+}
+.dashboard-menu-items a:hover{
+    color: #009444;
+}

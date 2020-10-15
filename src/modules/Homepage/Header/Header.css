@@ -1,0 +1,11 @@
+.header{
+    background-color: #FBD062;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+}
+@media (max-width: 767px){
+    .header{
+        clip-path: none;
+        height: auto;
+    }
+}

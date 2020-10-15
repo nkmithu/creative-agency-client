@@ -1,0 +1,18 @@
+.service-single-card {
+    border: none;
+    padding: 30px;
+    transition: all .3s ease;
+}
+
+.service-single-card .service-img {
+    display: block;
+    margin: 15px;
+    height: 74px;
+    width: 74px;
+    transition: transform .3s linear;
+}
+
+.btn-primary {
+    width: 108px;
+    height: 40px;
+}

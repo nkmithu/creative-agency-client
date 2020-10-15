@@ -1,0 +1,44 @@
+
+.font-50{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 63px;
+}
+.font-34{
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 43px;
+}
+.font-20{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 16px;
+}
+.font-16{
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+@media (max-width: 991px){
+    .font-50{
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 53px;
+    }
+    .font-34{
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 33px;
+    }
+    .font-20{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+    }
+    .font-16{
+        font-size: 15px;
+        line-height: 22px;
+        font-weight: 600;
+    }
+}
