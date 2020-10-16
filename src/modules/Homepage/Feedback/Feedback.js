@@ -4,8 +4,18 @@ import customer1 from '../../../resourses/images/customer-1.png';
 import customer2 from '../../../resourses/images/customer-2.png';
 import customer3 from '../../../resourses/images/customer-3.png';
 import FeedbackSingle from './FeedbackSingle/FeedbackSingle';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Feedback = () => {
+    const [reviews, setReviews] = useState([]);
+
+        useEffect( () => {
+        fetch('http://localhost:5000/reviews')
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    }, [])
+
 
     const customerReviewData = [
         {
@@ -40,7 +50,7 @@ const Feedback = () => {
                 </div>
                 <div className="row mt-5">
             {
-                customerReviewData.map(customer=> <FeedbackSingle customer = {customer}></FeedbackSingle>)
+                reviews.map(review=> <FeedbackSingle review = {review}></FeedbackSingle>)
             }
                     
                 </div>
