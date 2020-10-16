@@ -4,6 +4,8 @@ import service1 from '../../../resourses/images/icons/service1.png';
 import service2 from '../../../resourses/images/icons/service2.png';
 import service3 from '../../../resourses/images/icons/service3.png';
 import ServiceSIngle from './ServiceSIngle/ServiceSIngle';
+import { useEffect } from 'react';
+import { useState } from 'react';
 const Service = () => {
 
     const serviceData = [
@@ -28,6 +30,15 @@ const Service = () => {
         }
     ]
 
+    const [services, setServices] = useState([])
+   
+    useEffect( () => {
+        fetch('http://localhost:5000/services')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }, [])
+
+
     return (
         <section className="service-main my-5 py-5">
             <div className="container">
@@ -41,7 +52,7 @@ const Service = () => {
                 </div>
                 <div className="row mt-5">
                     {
-                      serviceData.map(service=> <ServiceSIngle service={service}></ServiceSIngle> )  
+                      services.map(service=> <ServiceSIngle service={service}></ServiceSIngle> )  
                     }
                 </div>
             </div>
