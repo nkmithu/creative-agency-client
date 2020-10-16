@@ -19,6 +19,9 @@
     line-height: 28px;
     font-weight: 600;
 }
+.bg-offgreen{
+    background-color: #e9f2f3;
+}
 
 @media (max-width: 991px){
     .font-50{

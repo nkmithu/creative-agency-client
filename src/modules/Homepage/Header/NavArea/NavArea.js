@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NavArea.css';
 
 const NavArea = () => {
@@ -32,7 +33,7 @@ const NavArea = () => {
                         <a className="nav-link" href="#">Contact Us</a>
                     </li>
                     <li className="nav-item">
-                        <a className="btn btn-secondary" href="#">Login</a>
+                        <Link to="/login" className="btn btn-secondary" href="#">Login</Link>
                     </li>
                 </ul>
             </div>

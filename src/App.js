@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
@@ -7,9 +7,19 @@ import Login from './modules/LogInPage/Login';
 import Dashboard from './modules/Dashboard/Dashboard';
 import ClientOrder from './modules/Dashboard/Clients/ClientOrder/ClientOrder';
 import ClientServiceList from './modules/Dashboard/Clients/ClientServiceList/ClientServiceList';
+import AdminServiceList from './modules/Dashboard/Admin/AdminServiceList/AdminServiceList';
+import ClientReview from './modules/Dashboard/Clients/ClientReview/ClientReview';
+import AdminAddService from './modules/Dashboard/Admin/AdminAddService/AdminAddService';
+import AdminCreate from './modules/Dashboard/Admin/AdminCreate/AdminCreate';
+import { createContext } from 'react';
+import PrivateRoute from './modules/PrivateRoute/PrivateRoute';
 
+export const UserContext = createContext();
 function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState({});
     return (
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
             <Switch>
                 <Route exact path="/">
@@ -18,17 +28,30 @@ function App() {
                 <Route path="/login">
                    <Login/>
                 </Route>
-                <Route path="/dashboard">
+                <PrivateRoute path="/dashboard">
                   <Dashboard/>
-                </Route>
-                <Route path="/clientOrder">
+                </PrivateRoute>
+                <PrivateRoute path="/clientOrder">
                   <ClientOrder/>
-                </Route>
-                <Route path="/clientServices">
+                </PrivateRoute>
+                <PrivateRoute path="/clientServices">
                   <ClientServiceList/>
-                </Route>
+                </PrivateRoute>
+                <PrivateRoute path="/clientReview">
+                  <ClientReview/>
+                </PrivateRoute>
+                <PrivateRoute path="/admin">
+                  <AdminServiceList/>
+                </PrivateRoute>
+                <PrivateRoute path="/adminAddService">
+                  <AdminAddService/>
+                </PrivateRoute>
+                <PrivateRoute path="/adminCreate">
+                  <AdminCreate/>
+                </PrivateRoute>
             </Switch>
         </Router>
+        </UserContext.Provider>
     )
 }
 
