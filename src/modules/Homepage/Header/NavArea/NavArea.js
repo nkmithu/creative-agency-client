@@ -33,7 +33,7 @@ const NavArea = () => {
                         <a className="nav-link" href="#">Contact Us</a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/login" className="btn btn-secondary" href="#">Login</Link>
+                        <Link to="/clientOrder" className="btn btn-secondary" href="#">Login</Link>
                     </li>
                 </ul>
             </div>

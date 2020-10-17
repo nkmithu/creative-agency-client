@@ -19,3 +19,10 @@
 .service-card:hover img{
     transform: scale(1.2);
 }
+.service-Single-wrapper:hover{
+    text-decoration: none;
+}
+.service-Single-wrapper{
+    color: #111430;
+}
+

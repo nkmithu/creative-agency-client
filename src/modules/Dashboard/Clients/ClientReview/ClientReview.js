@@ -17,6 +17,7 @@ const ClientReview = () => {
         newReview.img = loggedInUser.img;
         setReview(newReview);
         console.log(review);
+        console.log(loggedInUser.img);
     }
 
     const handleOnSubmit =(e)=>{

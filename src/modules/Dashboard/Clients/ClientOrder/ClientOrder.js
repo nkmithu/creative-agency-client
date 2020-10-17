@@ -1,7 +1,35 @@
 import React from 'react';
+import { useState } from 'react';
 import Sidebar from '../../SharedComponents/Sidebar/Sidebar';
 import Topbar from '../../SharedComponents/Topbar/Topbar';
+import './ClientOrder.css'
 const ClientOrder = () => {
+
+    const [order, setOrder] = useState({});
+    const handleOnblur =(e)=>{
+        const newOrder = { ...order };
+        newOrder[e.target.name] = e.target.value;
+        setOrder(newOrder);
+    }
+
+
+const handleOnSubmit =(e)=>{
+        const newOrder = {
+            ...order
+        };
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newOrder)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        })
+    }
+
     return (
         <main className="d-flex dasboard-wrapper">
             <Sidebar/>
@@ -10,23 +38,23 @@ const ClientOrder = () => {
                 <div className="container mt-5 py-5">
                     <div className="row">
                         <div className="col-lg-6 col-sm-12">
-                        <form action="">
+                        <form onSubmit={handleOnSubmit}>
                             <div className="form-group">
-                                <input type="email" class="form-control" placeholder="Your email address"/>
+                                <input onBlur={handleOnblur} name="email" type="email" className="form-control" placeholder="Your email address"/>
                             </div>
                             <div className="form-group">
-                                <input type="text" class="form-control" placeholder="Your/Company Name"/>
+                                <input onBlur={handleOnblur} name="name" type="text" className="form-control" placeholder="Your/Company Name"/>
                             </div>
                             <div className="form-group">
-                                <input type="text" class="form-control" placeholder="Graphics Design"/>
+                                <input onBlur={handleOnblur} name="serviceName" type="text" className="form-control" placeholder="Graphics Design"/>
                             </div>
                             <div className="form-group">
-                               <textarea className="form-control" name="" id="" cols="10" rows="5" placeholder="Project details"></textarea>
+                               <textarea onBlur={handleOnblur} className="form-control" name="description" id="" cols="10" rows="5" placeholder="Project details"></textarea>
                             </div>
                             <div className="form-group">
                               <div className="row">
                                   <div className="col-lg-6 col-sm-12">
-                                  <input type="number" class="form-control" placeholder="Price"/>
+                                  <input onBlur={handleOnblur} name="price" type="number" className="form-control" placeholder="Price"/>
                                   </div>
                               </div>
                             </div>

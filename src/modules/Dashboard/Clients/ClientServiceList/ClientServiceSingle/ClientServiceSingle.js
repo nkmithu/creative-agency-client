@@ -1,8 +1,10 @@
 import React from 'react';
 import './ClientServiceSingle.css'
-const ClientServiceSingle = () => {
+const ClientServiceSingle = (props) => {
+    const order = props.order;
+    console.log(order);
     return (
-        <div className="col-lg-6">
+        <div className="col-lg-6 col-sm-12 mb-4">
             <div className="card service-single-card">
                 <div className="d-flex justify-content-between">
                   <img
@@ -12,9 +14,8 @@ const ClientServiceSingle = () => {
                     <button className="btn btn-primary">Pending</button>
                 </div>
                 
-                <h5 className="font-20 mt-3">Web & Mobile design</h5>
-                <p className="des mt-3">We craft stunning and amazing web UI, using a well
-                    drrafted UX to fit your product.</p>
+                <h5 className="font-20 mt-3">{order.serviceName}</h5>
+                <p className="des mt-3">{order.description}</p>
             </div>
         </div>
     );

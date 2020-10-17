@@ -12,18 +12,19 @@
     color: #FBD062;
     font-size: 25px;
 }
-.portfolio-wrapper figure {
-    margin: 0 15px;
-}
 
 .slider-img {
     display: block;
     margin: auto;
     height: 330px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
+.slick-slide{
+    padding: 0 15px;
+}
 @media (max-width: 991px){
     .portfolio-wrapper {
         height: auto;

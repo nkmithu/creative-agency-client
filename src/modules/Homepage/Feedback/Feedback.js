@@ -19,22 +19,13 @@ const Feedback = () => {
 
     const customerReviewData = [
         {
-            name: 'Nash Patrik',
-            designation: 'CEO, Manpol',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum dui' +
-                    's laoreet maecenas. Feugiat ',
+            
             img: customer1
         }, {
-            name: 'Miriam Barron',
-            designation: 'CEO, Manpol',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum dui' +
-                    's laoreet maecenas. Feugiat ',
+            
             img: customer2
         }, {
-            name: 'Bria Malone',
-            designation: 'CEO, Manpol',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum dui' +
-                    's laoreet maecenas. Feugiat ',
+            
             img: customer3
         }
     ]
@@ -50,7 +41,7 @@ const Feedback = () => {
                 </div>
                 <div className="row mt-5">
             {
-                reviews.map(review=> <FeedbackSingle review = {review}></FeedbackSingle>)
+                reviews.map(review=> <FeedbackSingle customerImg={customerReviewData} review = {review}></FeedbackSingle>)
             }
                     
                 </div>

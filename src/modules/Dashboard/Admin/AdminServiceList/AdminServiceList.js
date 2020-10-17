@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import Sidebar from '../../SharedComponents/Sidebar/Sidebar';
 import Topbar from '../../SharedComponents/Topbar/Topbar';
+import AdminSingleService from './AdminSingleService/AdminSingleService';
 
 const AdminServiceList = () => {
+    const [orders, setOrders] = useState([]);
+
+    useEffect( () => {
+        fetch('http://localhost:5000/orders')
+        .then(res => res.json())
+        .then(data => setOrders(data))
+    }, [])
     return (
         <main className="d-flex dasboard-wrapper">
             <Sidebar/>
@@ -23,48 +32,9 @@ const AdminServiceList = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>
-                                                <select className="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Choose...</option>
-                                                    <option value="1">Pending</option>
-                                                    <option value="2">Done</option>
-                                                    <option value="3">Ongoing</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>
-                                                <select className="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Choose...</option>
-                                                    <option value="1">Pending</option>
-                                                    <option value="2">Done</option>
-                                                    <option value="3">Ongoing</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <select className="custom-select" id="inputGroupSelect01">
-                                                    <option selected>Choose...</option>
-                                                    <option value="1">Pending</option>
-                                                    <option value="2">Done</option>
-                                                    <option value="3">Ongoing</option>
-                                                </select>
-                                            </td>
-                                        </tr>
+                                        {
+                                            orders.map(order=><AdminSingleService key={order._id} order={order}></AdminSingleService>)
+                                        }
                                     </tbody>
                                 </table>
                             </div>
