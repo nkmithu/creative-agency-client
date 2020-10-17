@@ -8,7 +8,7 @@ const AdminServiceList = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://mysterious-ravine-13058.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])

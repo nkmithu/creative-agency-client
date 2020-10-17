@@ -18,7 +18,7 @@ const AdminCreate = () => {
         const newAdmin = {
             ...admin
         };
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://mysterious-ravine-13058.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -24,7 +24,7 @@ const ClientReview = () => {
         const newReview = {
             ...review
         };
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://mysterious-ravine-13058.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

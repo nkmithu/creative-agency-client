@@ -7,7 +7,7 @@ const ServiceSIngle = (props) => {
         <div className="col-lg-4 col-sm-12 mb-4">
             <Link to="/clientOrder" className="service-Single-wrapper">
              <div className="card service-card">
-                <img src={`http://localhost:5000/${service.img}`} alt="" className="service-img"/>
+                <img src={`https://mysterious-ravine-13058.herokuapp.com/${service.img}`} alt="" className="service-img"/>
                 <h5 className="font-20 mt-3">{service.title}</h5>
                 <p className="des mt-3">{service.description}</p>
             </div>

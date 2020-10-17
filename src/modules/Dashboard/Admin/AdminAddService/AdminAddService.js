@@ -36,7 +36,7 @@ const AdminAddService = () => {
         formData.append('title', service.title);
         formData.append('description', service.description);
 
-        fetch('http://localhost:5000/addAService', {
+        fetch('https://mysterious-ravine-13058.herokuapp.com/addAService', {
             method: 'POST',
             body: formData
         })

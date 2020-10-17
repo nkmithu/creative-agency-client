@@ -17,7 +17,7 @@ const handleOnSubmit =(e)=>{
         const newOrder = {
             ...order
         };
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://mysterious-ravine-13058.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
